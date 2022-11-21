@@ -1,26 +1,40 @@
 class LessonsController < ApplicationController
-  before_action :set_lesson, only: %i[index show new create edit update destroy]
+  before_action :set_lesson, only: %i[show update destroy]
   def index
     @lessons = Lesson.all
   end
 
   def show
-    @lesson = Lesson.find(params[:lesson_id])
+    @booking = Booking.new
   end
 
   def new
     @lesson = Lesson.new
   end
 
+  def create
+    @lesson = Lesson.new(lesson_params)
+    if @lesson.host == current_user && @lesson.save
+      redirect_to lesson_path(@lesson)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @lesson.destroy
+    redirect_to lessons_path, status: :see_other
+  end
+
 
   private
 
-  def lesson_params
-    params.require(:lesson).permit(:name, :category, :description, :price, :prepare_time, :photo)
+  def set_lesson
+    @lesson = Lesson.find(params[:id])
   end
 
-  def set_lesson
-    @lesson = Lesson.find(params[:lesson_id])
+  def lesson_params
+    params.require(:lesson).permit(:name, :category, :description, :price, :prepare_time, :photo)
   end
 
 end
