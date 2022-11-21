@@ -1,0 +1,15 @@
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+/home/lemonjuice/.rbenv/versions/3.1.2/bin/ruby -I /home/lemonjuice/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20221121-16808-l2ce18 sitelibdir\=./.gem.20221121-16808-l2ce18 clean
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20221121-16808-l2ce18 sitelibdir\=./.gem.20221121-16808-l2ce18
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/websocket-driver-0.7.5/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20221121-16808-l2ce18 sitelibdir\=./.gem.20221121-16808-l2ce18 install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20221121-16808-l2ce18

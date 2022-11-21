@@ -1,0 +1,16 @@
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+/home/lemonjuice/.rbenv/versions/3.1.2/bin/ruby -I /home/lemonjuice/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20221121-16808-2hpndc sitelibdir\=./.gem.20221121-16808-2hpndc clean
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20221121-16808-2hpndc sitelibdir\=./.gem.20221121-16808-2hpndc
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20221121-16808-2hpndc sitelibdir\=./.gem.20221121-16808-2hpndc install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20221121-16808-2hpndc/debug
