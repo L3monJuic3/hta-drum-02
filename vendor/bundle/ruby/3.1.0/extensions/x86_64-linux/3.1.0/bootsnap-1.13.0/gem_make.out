@@ -1,0 +1,15 @@
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+/home/lemonjuice/.rbenv/versions/3.1.2/bin/ruby -I /home/lemonjuice/.rbenv/versions/3.1.2/lib/ruby/site_ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20221122-24239-l64oe0 sitelibdir\=./.gem.20221122-24239-l64oe0 clean
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20221122-24239-l64oe0 sitelibdir\=./.gem.20221122-24239-l64oe0
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/lemonjuice/code/L3monJuic3/hta-drum-02/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.13.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20221122-24239-l64oe0 sitelibdir\=./.gem.20221122-24239-l64oe0 install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20221122-24239-l64oe0/bootsnap
