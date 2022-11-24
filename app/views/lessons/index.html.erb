@@ -1,6 +1,9 @@
-<% @lessons.each do |lesson| %>
-  <%= lesson.name %>
-  <%= lesson.price %>
-  <%= lesson.category %>
-<% end %>
-<%# category needs to be added to seeds for lessons %>
+<div class="row" style="" >
+  <% @lessons.each do |lesson| %>
+    <%= link_to lesson_path(lesson) do %>
+      <%= lesson.name %>
+      <%= lesson.price %>
+      <%= lesson.category %>
+    <% end %>
+  <% end %>
+</div>
