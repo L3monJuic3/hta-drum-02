@@ -1,1 +1,3 @@
-hi
+<% @lessons.each do |lesson| %>
+  <%= link_to lesson_path(lesson) %>
+<% end %>
