@@ -5,5 +5,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: "pages#home"
-  resources :lessons
+  get 'user_bookings', to: 'bookings#user_bookings'
+  get 'confirmation', to: 'bookings#create'
+
+  resources :lessons do
+    resources :bookings, only: [:create]
+  end
 end
