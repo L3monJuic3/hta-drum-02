@@ -1,7 +1,7 @@
 <div class="row" style="" >
   <% @lessons.each do |lesson| %>
-    <%= link_to lesson_path(lesson) do %>
-      <%= lesson.name %>
+    <%= link_to confirmation_path(lesson) do %>
+    <p class="text-3xl">  <%= lesson.name %> </p>
       <%= lesson.price %>
       <%= lesson.category %>
     <% end %>
