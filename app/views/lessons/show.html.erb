@@ -1,0 +1,18 @@
+<div class="z-20 mt-4 ml-12">
+  <div class="w-96 p-6 border shadow-sm rounded-lg bg-white">
+    <div class="mb-3">
+      <%= simple_form_for [@lesson, Booking.new] do |f| %>
+        <div class="text-center text-lg font-medium">
+          <%= f.input :booking_date, label: "Choose a date", as: :date, html5: true %>
+        </div>
+          <div class="reserve-btn w-full rounded-lg p-2 text-center text-bold">
+            <%= f.submit "Reserve" %>
+          </div>
+        <% end %>
+      </div>
+    <div class="flex justify-between px-3 pt-3 mt-3 border-top">
+      <p class="text-md font-semibold">Total: </p>
+      <p class="text-md font-semibold">$<%= @lesson.price %></p>
+    </div>
+  </div>
+</div>
