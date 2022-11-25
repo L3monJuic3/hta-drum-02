@@ -1,1 +1,9 @@
-hi
+<div class="row" style="" >
+  <% @lessons.each do |lesson| %>
+    <%= link_to lesson_path(lesson) do %>
+      <%= lesson.name %>
+      <%= lesson.price %>
+      <%= lesson.category %>
+    <% end %>
+  <% end %>
+</div>
