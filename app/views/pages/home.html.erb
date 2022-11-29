@@ -11,9 +11,11 @@ background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede9
       <div class="drummer-name" style="display: flex; align-items: center; justify-content: center; padding: 12rem; font-size: 44px;">
         <h1>DRUMMER NAME</h1>
       </div>
-        <div class="lessons" style="display: flex; align-items:center; justify-content:center; margin-bottom: 7.5rem; font-size: 30px; line-height: 58px;">
-        <p>Drum lessons</p>
-        </div>
+          <div class="lessons" style="display: flex; align-items:center; justify-content:center; margin-bottom: 7.5rem; font-size: 30px; line-height: 58px;">
+          <%= link_to lessons_path do %>
+            <p>Drum lessons!</p>
+          <% end %>
+          </div>
       <div class="enter-site" style="display: flex; align-items: center; justify-content: center;">
         <button>ENTER SITE</button>
       </div>
