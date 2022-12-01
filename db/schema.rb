@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_134529) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_095056) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,23 +18,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_134529) do
     t.datetime "booking_date"
     t.boolean "is_cancelled"
     t.bigint "user_id", null: false
-    t.bigint "host_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "lesson_id", null: false
-    t.index ["host_id"], name: "index_bookings_on_host_id"
     t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
-  create_table "hosts", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "address"
-    t.string "phone_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -45,7 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_134529) do
     t.bigint "host_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["host_id"], name: "index_lessons_on_host_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,12 +49,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_134529) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "email", default: "", null: false
+    t.boolean "is_host"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "hosts"
   add_foreign_key "bookings", "lessons"
   add_foreign_key "bookings", "users"
-  add_foreign_key "lessons", "hosts"
 end
