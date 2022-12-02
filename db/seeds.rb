@@ -101,3 +101,10 @@ lesson = Lesson.create!(
   price: 15
 )
 lesson.save!
+
+Booking.create!(
+  booking_date: Faker::Date.between(from: '2022-06-23', to: '2022-11-23'),
+  lesson_id: Lesson.last.id,
+  user_id: user.id
+  # host_id: host.id
+)
