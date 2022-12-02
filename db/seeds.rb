@@ -26,7 +26,7 @@
 # puts "Destroy all data in database..."
 # Lesson.destroy_all
 # Booking.destroy_all
-# # Host.destroy_all
+# Host.destroy_all
 # User.destroy_all
 
 # puts "Creating a new database..."
@@ -39,13 +39,13 @@
 #   phone_number: "07595096963",
 # )
 
-# # host = Host.create!(
-# #   email: "host@lewagon.com",
-# #   password: "lewagon",
-# #   name: "host",
-# #   phone_number: "07595096963",
-# #   address: "138 Kingsland road",
-# # )
+# host = Host.create!(
+#   email: "host@lewagon.com",
+#   password: "lewagon",
+#   name: "host",
+#   phone_number: "07595096963",
+#   address: "138 Kingsland road",
+# )
 
 # i = 0
 # 3.times do
@@ -53,7 +53,7 @@
 #     name: PACKAGES[i],
 #     description: PACKAGE_DESCRIPTION[i],
 #     price: PRICE[i],
-#     # host_id: host.id
+#     host_id: host.id
 #   )
 #   i += 1
 # end
@@ -73,3 +73,31 @@
 # )
 
 # puts "Database seed completed!"
+
+require "open-uri"
+require "json"
+
+puts "Cleaning up database..."
+Lesson.destroy_all
+Booking.destroy_all
+
+User.destroy_all
+puts "Database cleaned"
+
+user = User.create!(
+  email: 'visitor@drum.com',
+  password: '123456',
+  first_name: 'visitor',
+  last_name: 'drum',
+  phone_number: '07595096963'
+)
+puts "user #{user.id}"
+
+
+
+lesson = Lesson.create!(
+  name: 'Beginner Drum Class',
+  description: 'Perfect to get to know the teacher and try it out at low cost',
+  price: 15
+)
+lesson.save!
