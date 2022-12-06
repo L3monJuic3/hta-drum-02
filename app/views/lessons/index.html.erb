@@ -33,10 +33,13 @@ background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede9
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  font-size: 28px;">
-    <% @lessons.each do |lesson| %>
-      <h2><%= lesson.name %></h2>
+  font-size: 28px;
+  ">
+    <span class="text-decoration-line-through">
+      <% @lessons.each do |lesson| %>
+        <h2><%= lesson.name %></h2>
       <% end %>
+    </span>
   </div>
 </div>
 </body>
