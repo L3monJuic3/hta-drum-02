@@ -35,8 +35,8 @@ background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede9
   padding: 2rem;
   font-size: 28px;">
     <span class="new-line-text" style="line-height: 6.7em;">
-     <%= link_to lesson_path(lesson) do %>
-        <% @lessons.each do |lesson| %>
+    <% @lessons.each do |lesson| %>
+      <%= link_to lesson_path(lesson) do %>
           <h2><%= lesson.name %></h2>
         <% end %>
       <% end %>
