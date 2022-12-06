@@ -3,32 +3,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kolker+Brush&family=Poppins:wght@300&family=Source+Sans+Pro:wght@200&family=Xanh+Mono&display=swap');
 </style>
 <body style = "display: flex; margin: 0; align-items: center; justify-content: center; min-height: 100vh;">
-    <div class="mobile-container" style="
+<div class="mobile-container" style="
 width: 390px;
 height:844px;
 background-color: gray;
 border-radius: 3px;
 color: white;
 left: 1.26%;
-
 right: 0.25%;
 top: 0%;
 bottom: 50%;
-
-
-
 background: #FFFFFF;
 font-family: 'Amatic SC', cursive;
 background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede90cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGRydW18ZW58MHx8MHx8&w=1000&q=80');">
-      <div class="drummer-name" style="
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12rem;
-      font-size: 64px;">
-        <% @lessons.each do |lesson| %>
-          <h1><%= lesson.name %></h1>
-          <% end %>
-      </div>
+<%# PAGE HEADER %>
+  <div class="page-title" style="
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 40px">
+    <h1>Availabe Classes</h1>
   </div>
+<%# PAGE HEADER END %>
+
+<%# DISPLAYING ALL CLASSES AVAILABE %>
+  <div class="drummer-name" style="
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 28px;">
+    <% @lessons.each do |lesson| %>
+      <h2><%= lesson.name %></h2>
+      <% end %>
+  </div>
+</div>
 </body>
