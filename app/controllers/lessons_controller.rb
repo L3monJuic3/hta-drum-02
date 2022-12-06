@@ -14,18 +14,22 @@ class LessonsController < ApplicationController
 
   def create
     @lesson = Lesson.new(lesson_params)
-    if @lesson.host.id == current_user && @lesson.save
-      redirect_to lesson_path(@lesson)
+    @lesson.user = current_user
+    if @workout.save
+      redirect_to lessons_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @lesson.destroy
-    redirect_to lessons_path, status: :see_other
+    @lesson = Lesson.find(params[:id])
+    if @lesson.destroy
+      redirect_to lessons_path, status: :see_other
+    else
+      render 'lessons/index'
+    end
   end
-
 
   private
 
@@ -36,7 +40,6 @@ class LessonsController < ApplicationController
   def lesson_params
     params.require(:lesson).permit(:name, :category, :description, :price, :prepare_time, :photo)
   end
-
 end
 
 # each lesson should have its fields shown on html

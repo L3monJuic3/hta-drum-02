@@ -84,6 +84,7 @@ Booking.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
+#SEEDED USERS!!!
 user = User.create!(
   email: 'visitor@drum.com',
   password: '123456',
@@ -94,7 +95,7 @@ user = User.create!(
 puts "user #{user.id}"
 
 
-
+# SEEDED LESSONS!!!
 lesson = Lesson.create!(
   name: 'Beginner Drum Class',
   description: 'Perfect to get to know the teacher and try it out at low cost',
@@ -102,6 +103,21 @@ lesson = Lesson.create!(
 )
 lesson.save!
 
+lesson = Lesson.create!(
+  name: 'Intermediate Drum Class',
+  description: 'Great for those with a comfortable skillset and would like to advance further',
+  price: 25
+)
+lesson.save!
+
+lesson = Lesson.create!(
+  name: 'Expert Drum Class',
+  description: 'For seasoned students',
+  price: 15
+)
+lesson.save!
+
+# SEEDED BOOKINGS!!!
 Booking.create!(
   booking_date: Faker::Date.between(from: '2022-06-23', to: '2022-11-23'),
   lesson_id: Lesson.last.id,
