@@ -78,8 +78,9 @@ require "open-uri"
 require "json"
 
 puts "Cleaning up database..."
-Lesson.destroy_all
 Booking.destroy_all
+Lesson.destroy_all
+
 
 User.destroy_all
 puts "Database cleaned"
@@ -100,6 +101,18 @@ lesson = Lesson.create!(
   name: 'Beginner Drum Class',
   description: 'Perfect to get to know the teacher and try it out at low cost',
   price: 15
+)
+
+lesson = Lesson.create!(
+  name: 'Single lesson',
+  description: 'Single stand alone lesson',
+  price: 15
+)
+
+lesson = Lesson.create!(
+  name: 'Single lesson',
+  description: 'package of 5 lessons',
+  price: 50
 )
 lesson.save!
 

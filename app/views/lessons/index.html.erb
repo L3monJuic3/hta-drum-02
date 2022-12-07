@@ -1,46 +1,24 @@
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kolker+Brush&family=Poppins:wght@300&family=Source+Sans+Pro:wght@200&family=Xanh+Mono&display=swap');
-</style>
-<body style = "display: flex; margin: 0; align-items: center; justify-content: center; min-height: 100vh;">
-<div class="mobile-container" style="
-width: 390px;
-height:844px;
-background-color: gray;
-border-radius: 3px;
-color: white;
-left: 1.26%;
-right: 0.25%;
-top: 0%;
-bottom: 50%;
-background: #FFFFFF;
-font-family: 'Amatic SC', cursive;
-background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede90cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGRydW18ZW58MHx8MHx8&w=1000&q=80');">
-<%# PAGE HEADER %>
-  <div class="page-title" style="
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  font-size: 40px">
-    <h1>Availabe Classes</h1>
-  </div>
-<%# PAGE HEADER END %>
+<h1 class="text-4xl">Book Now</h1>
 
-<%# DISPLAYING ALL CLASSES AVAILABE %>
-  <div class="drummer-name" style="
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  font-size: 28px;">
-    <span class="new-line-text" style="line-height: 6.7em;">
-    <% @lessons.each do |lesson| %>
-      <%= link_to lesson_path(lesson) do %>
-          <h2><%= lesson.name %></h2>
-        <% end %>
-      <% end %>
-    </span>
-  </div>
+<div>
+<% @lessons.each_with_index do |lesson, index| %>
+<div class="container">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 m-5">
+    <a href="#">
+        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
+    </a>
+    <div class="p-5">
+        <a href="#">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><%= lesson.name %> <%= index + 1 %></h5>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> <%= lesson.description %></p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"> £<%= lesson.price.to_f %>0</p>
+        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Book now
+            <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </a>
+    </div>
 </div>
-</body>
+</div>
+<% end %>
