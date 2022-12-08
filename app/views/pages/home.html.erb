@@ -24,9 +24,7 @@ background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede9
         <h1>DRUMMER NAME</h1>
       </div>
           <div class="lessons" style="display: flex; align-items:center; justify-content:center; margin-top: -8rem; font-size: 40px; line-height: 20px;">
-          <%= link_to lessons_path do %>
             <p>Drum lessons!</p>
-          <% end %>
           </div>
       <div class="enter-site" style=
       "display: flex;
@@ -35,7 +33,9 @@ background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede9
       font-design: underline;
       font-size: 30px;
       margin: 9rem;">
+          <%= link_to lessons_path do %>
         <button><u>ENTER SITE</u></button>
+          <% end %>
       </div>
   </div>
 </body>
