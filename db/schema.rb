@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_151734) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_22_191453) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,8 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_151734) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "lesson_id", null: false
-    t.index ["lesson_id"], name: "index_bookings_on_lesson_id"
+    t.bigint "slots_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -41,10 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_151734) do
     t.time "end_time"
     t.boolean "is_available"
     t.bigint "lesson_id", null: false
-    t.bigint "booking_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_slots_on_booking_id"
     t.index ["lesson_id"], name: "index_slots_on_lesson_id"
   end
 
@@ -66,8 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_151734) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "lessons"
+  add_foreign_key "bookings", "slots", column: "slots_id"
   add_foreign_key "bookings", "users"
-  add_foreign_key "slots", "bookings"
   add_foreign_key "slots", "lessons"
 end
