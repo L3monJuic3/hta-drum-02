@@ -82,7 +82,7 @@ puts "Cleaning up database..."
 Slot.destroy_all
 Lesson.destroy_all
 User.destroy_all
-Booking.destroy_all
+
 
 puts "Database cleaned"
 
@@ -92,24 +92,28 @@ user1 = User.create!(
   password: '123456',
   first_name: 'visitor',
   last_name: 'drum',
-  phone_number: '07595096963'
+  phone_number: '07595096963',
+  is_host: true
+
 )
 puts "user #{user1.id}"
 
-
-# SEEDED LESSONS!!!
+#SEEDED LESSONS!!!
 lesson = Lesson.create!(
   name: 'Beginner Drum Class',
   description: 'Perfect to get to know the teacher and try it out at low cost',
   price: 15,
   user_id: user1.id
 )
+lesson.save!
+puts "lesson saved"
 i = 10
 until i == 23
-  slot1 = Slot.create!(lesson: lesson, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  slot1 = Slot.create!(lesson_id: lesson.id, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
-
+slot1.save!
+puts 'slot1 saved'
 
 lesson2 = Lesson.create!(
   name: 'Single lesson',
@@ -119,9 +123,12 @@ lesson2 = Lesson.create!(
 )
 i = 10
 until i == 23
-  Slot.create!(lesson: lesson2, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  Slot.create!(lesson_id: lesson2.id, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
+lesson.save!
+
+puts 'lesson2 saved'
 
 lesson3 = Lesson.create!(
   name: 'Single lesson',
@@ -131,11 +138,12 @@ lesson3 = Lesson.create!(
 )
 i = 10
 until i == 23
-  Slot.create!(lesson: lesson3, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  Slot.create!(lesson_id: lesson3.id, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
 
 lesson.save!
+puts 'lesson3 saved'
 
 lesson4 = Lesson.create!(
   name: 'Intermediate Drum Class',
@@ -145,11 +153,12 @@ lesson4 = Lesson.create!(
 )
 i = 10
 until i == 23
-  Slot.create!(lesson: lesson4, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  Slot.create!(lesson_id: lesson4.id, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
 
 lesson.save!
+puts 'lesson4 saved'
 
 lesson5 = Lesson.create!(
   name: 'Expert Drum Class',
@@ -159,16 +168,16 @@ lesson5 = Lesson.create!(
 )
 i = 10
 until i == 23
-  Slot.create!(lesson: lesson5, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  Slot.create!(lesson_id: lesson5.id, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
 
 lesson.save!
+puts 'lesson5 saved'
 
 # SEEDED BOOKINGS!!!
-Booking.create!(
-  booking_date: Faker::Date.between(from: '2022-06-23', to: '2022-11-23'),
-  user_id: user.id,
-  slots_id: slot1
-  # host_id: host.id
-)
+# Booking.create!(
+#   booking_date: Faker::Date.between(from: '2022-06-23', to: '2022-11-23'),
+#   user_id: user1.id,
+#   slots_id: slot
+# )
