@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get 'confirmation', to: 'bookings#create'
 
   resources :lessons do
-    resources :bookings, only: [:create]
+    resources :bookings, only: %i[create new]
   end
 end
