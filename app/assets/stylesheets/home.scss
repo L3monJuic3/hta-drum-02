@@ -1,3 +1,11 @@
+body {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 .mobile-container {
 width: 100vw;
 height:100vh;
@@ -13,11 +21,28 @@ font-family: 'Amatic SC', cursive;
 background-image: url('https://images.unsplash.com/photo-1625801821669-d11f0ede90cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjF8fGRydW18ZW58MHx8MHx8&w=1000&q=80');
 }
 
-
 .drummer-name {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12rem;
   font-size: 64px;
+}
+
+.lessons {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  margin-top: -8rem;
+  font-size: 40px;
+  line-height: 20px;
+}
+
+.enter-site {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-display: underline;
+  font-size: 30px;
+  margin: 9rem;
 }

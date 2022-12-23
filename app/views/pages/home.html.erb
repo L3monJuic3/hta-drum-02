@@ -5,21 +5,15 @@
 <head>
   <%= stylesheet_link_tag 'home', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
-<body style = "display: flex; margin: 0; align-items: center; justify-content: center; min-height: 100vh;">
+<body>
     <div class="mobile-container">
       <div class="drummer-name">
         <h1>DRUMMER NAME</h1>
       </div>
-          <div class="lessons" style="display: flex; align-items:center; justify-content:center; margin-top: -8rem; font-size: 40px; line-height: 20px;">
+          <div class="lessons">
             <p>Drum lessons!</p>
           </div>
-      <div class="enter-site" style=
-      "display: flex;
-      align-items: center;
-      justify-content: center;
-      font-design: underline;
-      font-size: 30px;
-      margin: 9rem;">
+      <div class="enter-site">
           <%= link_to lessons_path do %>
         <button><u>ENTER SITE</u></button>
           <% end %>
