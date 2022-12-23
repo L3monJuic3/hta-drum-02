@@ -1,6 +1,7 @@
-
-<h1 class="text-4xl">Book Now</h1>
-
+<head>
+  <%= stylesheet_link_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+  <h1 class="text-4xl">Book Now</h1>
 <div>
 <% @lessons.each_with_index do |lesson, index| %>
 <div class="container">
