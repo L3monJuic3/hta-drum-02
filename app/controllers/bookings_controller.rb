@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
       redirect_to new_user_session_path
     else
       @bookings = Booking.where(user_id: current_user.id)
-      @lesson = Lesson.where(id: current_user.slots.pluck(:lesson_id).uniq)
+      @lessons = Lesson.joins(:slots).where(slots: { id: @bookings.pluck(:slot_id) }).uniq
     end
   end
   # def user_bookings
