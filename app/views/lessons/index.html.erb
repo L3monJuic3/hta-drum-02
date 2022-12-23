@@ -16,16 +16,21 @@
   <h1 class="book"><strong>Book Now</strong></h1>
 
 
+<%# I am aware price needs to be a float. This is a quick fix for now  %>
 
 <div class="lessons-container">
   <ul id="lesson-list">
     <% @lessons.each do |lesson| %>
+    <%= link_to lesson_path(lesson.id) do  %>
       <li class="lesson">
         <div class="lesson-title"><%= lesson.name %></div>
         <div class="lesson-content"><%= lesson.description %></div>
+        <div class="lesson-price"><p>£<%= lesson.price %>.00</p></div>
       </li>
+      <%end %>
     <% end %>
   </ul>
+
 
   <script>
     const lessonList = document.getElementById('lesson-list');

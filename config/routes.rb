@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :bookings, except: %i[index destroy]
   end
+
+  resources :bookings, only: %i[index destroy]
 end

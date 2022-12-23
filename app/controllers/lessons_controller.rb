@@ -17,7 +17,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(lesson_params)
     @lesson.user = current_user
     if @workout.save
-      redirect_to lessons_path
+      redirect_to lesson_booking_path(@lesson.id, @booking.id)
     else
       render :new, status: :unprocessable_entity
     end
