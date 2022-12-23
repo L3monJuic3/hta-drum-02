@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # get 'bookings', to: 'bookings#user_bookings'
   # get 'confirmation', to: 'bookings#create'
+  get '/lessons/:lesson_id/bookings/:id', to: 'bookings#my_bookings', as: 'my_bookings'
 
   resources :lessons do
     resources :bookings, except: %i[index destroy]
