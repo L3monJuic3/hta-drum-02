@@ -69,6 +69,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+# Font awesome
+gem "font-awesome-sass", "~> 6.1"
 
 # Faker gem
 gem 'faker'
