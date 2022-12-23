@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_22_191453) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_22_202719) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +20,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_191453) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "slots_id"
+    t.bigint "slots_id", null: false
+    t.index ["slots_id"], name: "index_bookings_on_slots_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -33,6 +34,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_191453) do
     t.datetime "updated_at", null: false
     t.datetime "start_time"
     t.datetime "end_time"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -65,5 +68,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_22_191453) do
 
   add_foreign_key "bookings", "slots", column: "slots_id"
   add_foreign_key "bookings", "users"
+  add_foreign_key "lessons", "users"
   add_foreign_key "slots", "lessons"
 end
