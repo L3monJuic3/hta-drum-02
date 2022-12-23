@@ -1,6 +1,7 @@
 body {
   font-family: 'Amatic SC', cursive;
 }
+
 .nav {
   text-align: center;
   font-size: 25px;
@@ -21,4 +22,20 @@ body {
   text-align: center;
   padding: 3rem;
   font-size: 45px;
+}
+
+.lessons-container {
+  color: red;
+}
+
+// This is for the dropdown menu styling
+
+.lesson-content {
+  /* By default, hide the content */
+  display: none;
+}
+
+.lesson-content.expanded {
+  /* When the lesson is expanded, show the content */
+  display: block;
 }

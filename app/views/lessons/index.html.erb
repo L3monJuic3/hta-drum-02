@@ -2,7 +2,11 @@
   <%= stylesheet_link_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kolker+Brush&family=Poppins:wght@300&family=Source+Sans+Pro:wght@200&family=Xanh+Mono&display=swap');
+<%= javascript_include_tag '/app/javascript/options.js' %>
+
 </style>
+
+
 </head>
 <div class="nav">
   <span class="word">Contact</span>
@@ -10,6 +14,33 @@
   <span class="word">Menu</span>
 </div>
   <h1 class="book"><strong>Book Now</strong></h1>
+
+
+
+<div class="lessons-container">
+  <ul id="lesson-list">
+    <% @lessons.each do |lesson| %>
+      <li class="lesson">
+        <div class="lesson-title"><%= lesson.name %></div>
+        <div class="lesson-content"><%= lesson.description %></div>
+      </li>
+    <% end %>
+  </ul>
+
+  <script>
+    const lessonList = document.getElementById('lesson-list');
+
+    lessonList.addEventListener('click', (event) => {
+      if (event.target.className === 'lesson-title') {
+        event.target.nextElementSibling.classList.toggle('expanded');
+      }
+    });
+  </script>
+</div>
+
+
+
+ <!--
 <div>
 <% @lessons.each_with_index do |lesson, index| %>
 <div class="container">
@@ -31,3 +62,4 @@
 </div>
 </div>
 <% end %>
+-->
