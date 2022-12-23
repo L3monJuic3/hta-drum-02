@@ -69,6 +69,11 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+# Font awesome
+gem "font-awesome-sass", "~> 6.1"
+
+# Autoprefixer is a tool to add browser prefixes to CSS rules using the Can I Use database.
+gem "autoprefixer-rails"
 
 # Faker gem
 gem 'faker'

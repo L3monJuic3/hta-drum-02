@@ -1,0 +1,49 @@
+body {
+  font-family: 'Amatic SC', cursive;
+}
+
+.nav {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 2rem;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 10rem;
+
+}
+
+.word:last-child {
+  margin-right: 0;
+}
+
+.book {
+  text-align: center;
+  padding: 3rem;
+  font-size: 45px;
+}
+
+.lessons-container {
+  cursor: pointer;
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  margin: 30px 0;
+}
+// This is for the dropdown menu styling
+
+.lesson-content {
+  /* By default, hide the content */
+  display: none;
+  cursor: pointer;
+}
+
+.lesson-content.expanded {
+  /* When the lesson is expanded, show the content */
+  display: block;
+}
