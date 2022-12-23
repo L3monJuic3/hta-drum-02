@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @slots_available = Slot.available.where(lesson: @lesson)
   end
 
   def new

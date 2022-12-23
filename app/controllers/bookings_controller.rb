@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy, :checkout]
 
+  def index
+    @bookings = Booking.all
+    @slots = Slot.all
+  end
+
   def new
     if current_user.nil?
       redirect_to new_user_session_path
@@ -13,6 +18,9 @@ class BookingsController < ApplicationController
       # raise
       # @booking.activity = @activity
     end
+  end
+
+  def show
   end
 
   def my_bookings
@@ -52,7 +60,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking_date).permit(:booking)
+    params.require(:booking_date).permit(:booking, :slot_id)
   end
 
   def set_booking
