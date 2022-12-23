@@ -109,7 +109,7 @@ lesson.save!
 puts "lesson saved"
 i = 10
 until i == 23
-  slot1 = Slot.create!(lesson_id: lesson.id, start_time: DateTime.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
+  slot1 = Slot.create!(lesson_id: lesson.id, start_time: Time.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
   i += 1
 end
 slot1.save!
