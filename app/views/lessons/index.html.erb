@@ -16,30 +16,32 @@
   <h1 class="book"><strong>Book Now</strong></h1>
 
 
+<%# I am aware price needs to be a float. This is a quick fix for now  %>
 
 <div class="lessons-container">
-    <ul id="lesson-list">
-      <% @lessons.each do |lesson| %>
-        <li class="lesson">
-          <div class="lesson-title"><%= lesson.name %></div>
-          <div class="lesson-content">
-             <p><strong><%= lesson.description %></strong></p>
-             <!--<p><strong><%= lesson.description %></strong></p>
-             <p><strong><%= lesson.price %></strong></p> -->
-          </div>
-        </li>
-      <% end %>
-    </ul>
+  <ul id="lesson-list">
+    <% @lessons.each do |lesson| %>
+    <%= link_to lesson_path(lesson.id) do  %>
+      <li class="lesson">
+        <div class="lesson-title"><%= lesson.name %></div>
+        <div class="lesson-content"><%= lesson.description %></div>
+        <div class="lesson-price"><p>£<%= lesson.price %>.00</p></div>
+      </li>
+      <%end %>
+    <% end %>
+  </ul>
 
-    <script>
-      const lessonList = document.getElementById('lesson-list');
 
-      lessonList.addEventListener('click', (event) => {
-        if (event.target.className === 'lesson-title') {
-          event.target.nextElementSibling.classList.toggle('expanded');
-        }
-      });
-    </script>
+  <script>
+    const lessonList = document.getElementById('lesson-list');
+
+    lessonList.addEventListener('click', (event) => {
+      if (event.target.className === 'lesson-title') {
+        event.target.nextElementSibling.classList.toggle('expanded');
+      }
+    });
+  </script>
+
 </div>
 
 

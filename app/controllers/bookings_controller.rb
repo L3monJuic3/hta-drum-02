@@ -20,9 +20,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def my_bookings
     if current_user.nil?
       redirect_to new_user_session_path
@@ -39,15 +36,14 @@ class BookingsController < ApplicationController
   # end
 
   def create
+    @lesson = Lesson.find(params[:lesson_id])
     @booking = Booking.new(booking_params)
-    @booking = Booking.find(params[:lesson_id])
-    @booking.lesson = @lesson
     @booking.user = current_user
-    if @booking.save!
+    if @booking.save
       @booking.slot.update(is_available: false)
-      redirect_to lessson_bookings_path(lesson.id, booking.id)
+      redirect_to lesson_booking_path(@lesson.id, @booking.id), notice: "Booking created successfully"
     else
-      render 'lessons/show', status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -60,11 +56,15 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking_date).permit(:booking, :slot_id)
+    params.require(:booking).permit(:booking_date, :slot_id)
   end
 
   def set_booking
     @booking = Booking.find(params[:id])
+  end
+
+  def set_lesson
+    @lesson = Lesson.find(params[:lesson_id])
   end
 
 end

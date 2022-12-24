@@ -1,10 +1,12 @@
+
 <div class="z-20 mt-4 ml-12">
   <div class="w-96 p-6 border shadow-sm rounded-lg bg-white">
     <div class="mb-3">
-      <%= simple_form_for [@lesson, @booking] do |f| %>
+      <%= simple_form_for [@lesson, @booking], url: lesson_bookings_path(@lesson.id), method: :post do |f| %>
         <div class="text-center text-lg font-medium">
+          <%= f.hidden_field :lesson_id, value: @lesson.id %>
           <%= f.input :booking_date, label: "Choose a date", as: :date, html5: true %>
-          <%= f.association :slot, label: "please choose a time slot", label_method: :start_time, value_method: :id, collection: @slots_available %>
+          <%= f.association :slot, label: "please choose a time slot", label_method: :slot_time, value_method: :id, collection: @slots_available %>
         </div>
           <div class="reserve-btn w-full rounded-lg p-2 text-center text-bold">
             <%= f.submit "Book", class: "btn btn-light book-button"%>

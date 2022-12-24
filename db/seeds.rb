@@ -173,9 +173,9 @@ end
 lesson.save!
 puts 'lesson5 saved'
 
-# SEEDED BOOKINGS!!!
-# Booking.create!(
-#   booking_date: Faker::Date.between(from: '2022-06-23', to: '2022-11-23'),
-#   user_id: user1.id,
-#   slots_id: slot
-# )
+#SEEDED BOOKINGS!!!
+Booking.create!(
+  booking_date: Date.today,
+  user_id: user1.id,
+  slot_id: slot1.id
+)
