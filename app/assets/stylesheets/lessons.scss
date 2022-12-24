@@ -35,12 +35,31 @@ body {
 li {
   margin: 30px 0;
 }
-// This is for the dropdown menu styling
 
+// making the text to have the image in the background
+
+
+
+// This is for the dropdown menu styling
 .lesson-content {
   /* By default, hide the content */
   display: none;
   cursor: pointer;
+}
+
+.lesson-content p {
+  background-image: url('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=');
+  display: inline-block;
+  width: 509px;
+  height: 399px;
+  color: white;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  // color: rgba(255, 255, 255, 10); /* 50% transparent white */
+  color: rgba(255, 255, 255, 20);
+
 }
 
 .lesson-content.expanded {
