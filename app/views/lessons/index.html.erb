@@ -21,10 +21,10 @@
     <ul id="lesson-list">
       <% @lessons.each do |lesson| %>
         <li class="lesson">
-          <div class="lesson-title"><%= lesson.name %>
-          <img src="https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=" alt="drumpic">
+          <div class="lesson-title"><%= lesson.name %></div>
+          <div class="lesson-content">
+              <%= lesson.description %>
           </div>
-          <div class="lesson-content"><%= lesson.description %></div>
         </li>
       <% end %>
     </ul>
