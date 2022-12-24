@@ -18,25 +18,39 @@
 
 
 <div class="lessons-container">
-  <ul id="lesson-list">
-    <% @lessons.each do |lesson| %>
-      <li class="lesson">
-        <div class="lesson-title"><%= lesson.name %></div>
-        <div class="lesson-content"><%= lesson.description %></div>
-      </li>
-    <% end %>
-  </ul>
+    <ul id="lesson-list">
+      <% @lessons.each do |lesson| %>
+        <li class="lesson">
+          <div class="lesson-title"><%= lesson.name %>
+          <img src="https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=" alt="drumpic">
+          </div>
+          <div class="lesson-content"><%= lesson.description %></div>
+        </li>
+      <% end %>
+    </ul>
 
-  <script>
-    const lessonList = document.getElementById('lesson-list');
+    <script>
+      const lessonList = document.getElementById('lesson-list');
 
-    lessonList.addEventListener('click', (event) => {
-      if (event.target.className === 'lesson-title') {
-        event.target.nextElementSibling.classList.toggle('expanded');
-      }
-    });
-  </script>
+      lessonList.addEventListener('click', (event) => {
+        if (event.target.className === 'lesson-title') {
+          event.target.nextElementSibling.classList.toggle('expanded');
+        }
+      });
+    </script>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
