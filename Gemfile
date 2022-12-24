@@ -77,8 +77,3 @@ gem "autoprefixer-rails"
 
 # Faker gem
 gem 'faker'
-
-gem "cloudinary"
-
-
-gem "dotenv-rails", groups: [:echo '.env*' >> .gitignoredevelopment, :test]
