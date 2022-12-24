@@ -18,25 +18,41 @@
 
 
 <div class="lessons-container">
-  <ul id="lesson-list">
-    <% @lessons.each do |lesson| %>
-      <li class="lesson">
-        <div class="lesson-title"><%= lesson.name %></div>
-        <div class="lesson-content"><%= lesson.description %></div>
-      </li>
-    <% end %>
-  </ul>
+    <ul id="lesson-list">
+      <% @lessons.each do |lesson| %>
+        <li class="lesson">
+          <div class="lesson-title"><%= lesson.name %></div>
+          <div class="lesson-content">
+             <p><strong><%= lesson.description %></strong></p>
+             <!--<p><strong><%= lesson.description %></strong></p>
+             <p><strong><%= lesson.price %></strong></p> -->
+          </div>
+        </li>
+      <% end %>
+    </ul>
 
-  <script>
-    const lessonList = document.getElementById('lesson-list');
+    <script>
+      const lessonList = document.getElementById('lesson-list');
 
-    lessonList.addEventListener('click', (event) => {
-      if (event.target.className === 'lesson-title') {
-        event.target.nextElementSibling.classList.toggle('expanded');
-      }
-    });
-  </script>
+      lessonList.addEventListener('click', (event) => {
+        if (event.target.className === 'lesson-title') {
+          event.target.nextElementSibling.classList.toggle('expanded');
+        }
+      });
+    </script>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
