@@ -83,7 +83,6 @@ Slot.destroy_all
 Lesson.destroy_all
 User.destroy_all
 
-
 puts "Database cleaned"
 
 #SEEDED USERS!!!
@@ -94,19 +93,20 @@ user1 = User.create!(
   last_name: 'drum',
   phone_number: '07595096963',
   is_host: true
-
 )
 puts "user #{user1.id}"
 
 #SEEDED LESSONS!!!
+file = URI.open('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=')
 lesson = Lesson.create!(
   name: 'Beginner Drum Class',
   description: 'Perfect to get to know the teacher and try it out at low cost',
   price: 15,
   user_id: user1.id
 )
+lesson.image.attach(io: file, filename: '/app/assets/images/Homepagehtadrum.png', content_type: 'image/png')
 lesson.save!
-puts "lesson saved"
+puts 'lesson saved'
 i = 10
 until i == 23
   slot1 = Slot.create!(lesson_id: lesson.id, start_time: Time.new(2022, 12, 2, i, 0, 0), end_time: DateTime.new(2022, 12, 2, (i+1), 0, 0) )
@@ -119,6 +119,7 @@ lesson2 = Lesson.create!(
   name: 'Single lesson',
   description: 'Single stand alone lesson',
   price: 15,
+  image: 'https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=',
   user_id: user1.id
 )
 i = 10
@@ -134,6 +135,7 @@ lesson3 = Lesson.create!(
   name: 'Single lesson',
   description: 'package of 5 lessons',
   price: 50,
+  image: 'https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=',
   user_id: user1.id
 )
 i = 10
@@ -149,6 +151,7 @@ lesson4 = Lesson.create!(
   name: 'Intermediate Drum Class',
   description: 'Great for those with a comfortable skillset and would like to advance further',
   price: 25,
+  image: 'https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=',
   user_id: user1.id
 )
 i = 10
@@ -164,6 +167,7 @@ lesson5 = Lesson.create!(
   name: 'Expert Drum Class',
   description: 'For seasoned students',
   price: 15,
+  image: 'https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=',
   user_id: user1.id
 )
 i = 10
