@@ -66,31 +66,27 @@
   </div>
 <% end %>
 
-<script>
-  function expandLesson(lessonElement) {
+  <script>
+    function expandLesson(lessonElement) {
+      var descriptionElement = lessonElement.querySelector('.lesson-description');
+      if (descriptionElement.style.display === 'none') {
+        descriptionElement.style.display = 'block';
+      } else {
+        descriptionElement.style.display = 'none';
+      }
+    }
+
+    function expandLesson(lessonElement) {
     var descriptionElement = lessonElement.querySelector('.lesson-description');
     if (descriptionElement.style.display === 'none') {
       descriptionElement.style.display = 'block';
+      lessonElement.classList.add('expanded');
     } else {
       descriptionElement.style.display = 'none';
+      lessonElement.classList.remove('expanded');
     }
   }
-
-  function expandLesson(lessonElement) {
-  var descriptionElement = lessonElement.querySelector('.lesson-description');
-  if (descriptionElement.style.display === 'none') {
-    descriptionElement.style.display = 'block';
-    lessonElement.classList.add('expanded');
-  } else {
-    descriptionElement.style.display = 'none';
-    lessonElement.classList.remove('expanded');
-  }
-}
-
-
-</script>
-
-
+  </script>
 
 </div>
 <!--
