@@ -18,6 +18,78 @@
 
 <%# I am aware price needs to be a float. This is a quick fix for now  %>
 
+
+
+<!--
+<div id="lesson-container">
+  <% @lessons.each do |lesson| %>
+    <div class="lesson">
+      <div class="lesson-content">
+        <%= image_tag 'https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=' %>
+        <p class="lesson-title"><%= lesson.name %></p>
+        <p class="lesson-description"><%= lesson.description %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const lessonTitles = document.querySelectorAll('.lesson-title');
+  lessonTitles.forEach((title, index) => {
+    if (index > 0) {
+      const lesson = title.parentElement;
+      lesson.querySelector('img').style.display = 'none';
+      title.nextElementSibling.style.display = 'none';
+    }
+    title.addEventListener('click', event => {
+      const lesson = event.target.parentElement;
+      lesson.querySelector('img').style.display = 'block';
+      const description = event.target.nextElementSibling;
+      if (description.style.display === 'block') {
+        lesson.querySelector('img').style.display = 'none';
+        description.style.display = 'none';
+      } else {
+        description.style.display = 'block';
+      }
+    });
+  });
+});
+
+  </script>
+-->
+<% @lessons.each do |lesson| %>
+  <div class="lesson" onclick="expandLesson(this)">
+    <h2 class="lesson-title"><%= lesson.name %></h2>
+    <div class="lesson-description" style="display: none;">
+      <p><%= lesson.description %></p>
+    </div>
+  </div>
+<% end %>
+
+  <script>
+    function expandLesson(lessonElement) {
+      var descriptionElement = lessonElement.querySelector('.lesson-description');
+      if (descriptionElement.style.display === 'none') {
+        descriptionElement.style.display = 'block';
+      } else {
+        descriptionElement.style.display = 'none';
+      }
+    }
+
+    function expandLesson(lessonElement) {
+    var descriptionElement = lessonElement.querySelector('.lesson-description');
+    if (descriptionElement.style.display === 'none') {
+      descriptionElement.style.display = 'block';
+      lessonElement.classList.add('expanded');
+    } else {
+      descriptionElement.style.display = 'none';
+      lessonElement.classList.remove('expanded');
+    }
+  }
+  </script>
+
+</div>
+<!--
 <div class="lessons-container">
   <ul id="lesson-list">
     <% @lessons.each do |lesson| %>
@@ -41,8 +113,7 @@
       }
     });
   </script>
-
-</div>
+-->
 
 
 

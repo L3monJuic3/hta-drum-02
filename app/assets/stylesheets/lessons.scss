@@ -41,28 +41,85 @@ li {
 
 
 // This is for the dropdown menu styling
-.lesson-content {
-  /* By default, hide the content */
-  display: none;
-  cursor: pointer;
+
+// -----------TEST TEST-------------
+
+.lesson img {
+  display: block;
 }
 
-.lesson-content p {
+.lesson:not(:first-child) img {
+  display: none;
+}
+
+.lesson-description {
+  display: none;
+}
+
+.lesson:not(:first-child) .lesson-description {
+  display: none;
+}
+
+// -----------TEST TEST-------------
+
+.lesson {
+  background-image: none;
+}
+
+.lesson.expanded {
   background-image: url('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=');
-  display: inline-block;
-  width: 509px;
-  height: 399px;
-  color: white;
+}
+
+
+
+
+
+.lesson {
+  /* By default, hide the content */
+  // display: none;
+  cursor: pointer;
   justify-content: center;
   display: flex;
   align-items: center;
-  font-size: 28px;
-  // color: rgba(255, 255, 255, 10); /* 50% transparent white */
-  color: rgba(255, 255, 255, 20);
-
 }
 
-.lesson-content.expanded {
-  /* When the lesson is expanded, show the content */
-  display: block;
-}
+// .lesson-content p {
+//   // display: inline-block;
+
+// }
+
+// ---------
+// .lesson {
+//   position: relative;
+// }
+
+// .lesson img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+
+// .lesson-title,
+// .lesson-description {
+//   position: relative;
+//   z-index: 1;
+// }
+// ---------
+
+
+
+// .lesson-content p {
+//   // background-image: url('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=');
+//   display: inline-block;
+//   width: 509px;
+//   height: 399px;
+//   color: white;
+//   font-size: 28px;
+//   // color: rgba(255, 255, 255, 10); /* 50% transparent white */
+//   color: rgba(255, 255, 255, 20);
+
+// }
