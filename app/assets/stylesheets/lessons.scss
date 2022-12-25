@@ -62,21 +62,31 @@ li {
 
 // -----------TEST TEST-------------
 
-
-
-
-
-
-.lesson-content {
-  /* By default, hide the content */
-  // display: none;
-  cursor: pointer;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-
+.lesson {
+  background-image: none;
 }
 
+.lesson.expanded {
+  background-image: url('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=');
+}
+
+
+
+
+
+// .lesson-content {
+//   /* By default, hide the content */
+//   // display: none;
+//   cursor: pointer;
+//   justify-content: center;
+//   display: flex;
+//   align-items: center;
+// }
+
+// .lesson-content p {
+//   // display: inline-block;
+
+// }
 
 // ---------
 // .lesson {
