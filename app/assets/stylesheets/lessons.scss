@@ -64,6 +64,9 @@ li {
 
 
 
+
+
+
 .lesson-content {
   /* By default, hide the content */
   // display: none;
@@ -81,13 +84,14 @@ li {
 // }
 
 // .lesson img {
-//   // width: 100%;
-//   // height: 100%;
+//   width: 100%;
+//   height: 100%;
 //   object-fit: cover;
 //   position: absolute;
 //   top: 0;
 //   left: 0;
 // }
+
 
 // .lesson-title,
 // .lesson-description {
@@ -97,8 +101,9 @@ li {
 // ---------
 
 
+
 // .lesson-content p {
-//   background-image: url('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=');
+//   // background-image: url('https://media.istockphoto.com/id/1141790182/photo/drummer-playing-drum-set-at-concert-on-stage-music-show-bright-scene-lighting-in-club-drum.jpg?s=170667a&w=0&k=20&c=-X15_1xaoMj0-9tyJ7KRd7XdK4NQsDavNSd5rCz1fQU=');
 //   display: inline-block;
 //   width: 509px;
 //   height: 399px;
@@ -107,9 +112,4 @@ li {
 //   // color: rgba(255, 255, 255, 10); /* 50% transparent white */
 //   color: rgba(255, 255, 255, 20);
 
-// }
-
-// .lesson-content.expanded {
-//   /* When the lesson is expanded, show the content */
-//   display: block;
 // }
