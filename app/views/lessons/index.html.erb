@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kolker+Brush&family=Poppins:wght@300&family=Source+Sans+Pro:wght@200&family=Xanh+Mono&display=swap');
-<%= javascript_include_tag '/app/javascript/options.js' %>
+
 
 </style>
 
@@ -10,7 +10,7 @@
 </head>
 <div class="nav">
   <span class="word">Contact</span>
-  <span class="word">About</span>
+  <span class="word"><%= link_to "About", about_path %></span>
   <span class="word">Menu</span>
 </div>
   <h1 class="book"><strong>Book Now</strong></h1>
@@ -21,8 +21,8 @@
 <% @lessons.each do |lesson| %>
   <div class="lesson" onclick="expandLesson(this)">
     <h2 class="lesson-title"><%= lesson.name %></h2>
-    <div class="lesson-description" style="display: none;">
    <%= link_to lesson_path(lesson.id) do  %>
+    <div class="lesson-description" style="display: none;">
       <p><%= lesson.description %></p>
     </div>
   </div>
@@ -52,44 +52,6 @@
   </script>
 
 </div>
-<!--
-<div class="lessons-container">
-  <ul id="lesson-list">
-    <% @lessons.each do |lesson| %>
-    <%= link_to lesson_path(lesson.id) do  %>
-      <li class="lesson">
-        <div class="lesson-title"><%= lesson.name %></div>
-        <div class="lesson-content"><%= lesson.description %></div>
-        <div class="lesson-price"><p>£<%= lesson.price %>.00</p></div>
-      </li>
-      <%end %>
-    <% end %>
-  </ul>
-
-
-  <script>
-    const lessonList = document.getElementById('lesson-list');
-
-    lessonList.addEventListener('click', (event) => {
-      if (event.target.className === 'lesson-title') {
-        event.target.nextElementSibling.classList.toggle('expanded');
-      }
-    });
-  </script>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
  <!--
