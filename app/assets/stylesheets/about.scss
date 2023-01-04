@@ -1,0 +1,19 @@
+body {
+  font-family: 'Amatic SC', cursive;
+}
+
+.nav {
+  text-align: center;
+  font-size: 25px;
+  margin-top: 2rem;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 10rem;
+
+}
+
+.word:last-child {
+  margin-right: 0;
+}
