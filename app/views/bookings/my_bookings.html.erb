@@ -1,1 +1,25 @@
 <h1>This is the bookings show page</h1>
+<% @lessons.each do |lesson|%>
+<% @bookings.each do |booking| %>
+
+<%= booking.booking_date %>
+<% end %>
+<% end %>
+
+
+<div data-controller="tabs">
+  <div class="bg-white p-4">
+    <div class="flex justify-between">
+      <a data-target="tabs.current" data-action="tabs#activate" class="text-blue-500 underline cursor-pointer">Current Bookings</a>
+      <a data-target="tabs.past" data-action="tabs#activate" class="text-blue-500 underline cursor-pointer">Past Bookings</a>
+    </div>
+  </div>
+  <div data-target="tabs.current" class="tab-content">
+    <!-- current bookings content -->
+    <p>This is your current booking</p>
+  </div>
+  <div data-target="tabs.past" class="tab-content hidden">
+    <!-- past bookings content -->
+    <p>This is your past booking</p>
+  </div>
+</div>

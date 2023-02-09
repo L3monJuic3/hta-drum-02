@@ -1,0 +1,18 @@
+nav {
+  display: flex;
+  a {
+    padding: 0.5rem 1rem;
+    &.current {
+      border-bottom: 2px solid black;
+    }
+  }
+}
+
+[data-target] {
+  &.current {
+    display: block;
+  }
+  &:not(.current) {
+    display: none;
+  }
+}

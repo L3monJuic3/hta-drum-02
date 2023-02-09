@@ -19,12 +19,14 @@
 <%# I am aware price needs to be a float. This is a quick fix for now  %>
 
 <% @lessons.each do |lesson| %>
+<%= link_to lesson_path(lesson.id) do  %>
   <div class="lesson" onclick="expandLesson(this)">
     <h2 class="lesson-title"><%= lesson.name %></h2>
     <div class="lesson-description" style="display: none;">
       <p><%= lesson.description %></p>
     </div>
   </div>
+ <% end %>
 <% end %>
 
   <script>
