@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy, :checkout]
-# minore comment means nothing
+
   def index
     @bookings = Booking.all
     @slots = Slot.all
